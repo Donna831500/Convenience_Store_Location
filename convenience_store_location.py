@@ -81,7 +81,6 @@ for each_area in area_code:
 
     #################################################
     # 逐页读取
-    # key = 55a33f0144a6340f7c3df45fb1d7b9b0
     # 在高德地图中寻找便利店类型地点时，将types 设为060200 ： types = 060200
     #################################################
     while(True):
@@ -191,7 +190,7 @@ area_list = []          # 区域list
 #########################################################
 for i in range(0,len(final_logitude_list)):
 
-    url = 'https://restapi.amap.com/v3/geocode/regeo?output=JSON&location='+str(final_logitude_list[i])+','+str(final_latitude_list[i])+'&key=55a33f0144a6340f7c3df45fb1d7b9b0&radius='+str(current_radius)+'&extensions=base'
+    url = 'https://restapi.amap.com/v3/geocode/regeo?output=JSON&location='+str(final_logitude_list[i])+','+str(final_latitude_list[i])+'&key= &radius='+str(current_radius)+'&extensions=base'
     response = requests.get(url)
     dict_address = response.json()
     regeocode = dict_address.get('regeocode')
@@ -268,14 +267,12 @@ line_list = []          # 地铁线路名
 
 ###########################################################################
 # 逐页读取
-# key = 55a33f0144a6340f7c3df45fb1d7b9b0
 # 在高德地图中寻找地铁站类型地点时，以地铁站为关键字搜索： keywords=地铁站
 # 将搜索范围定位南京市： city=320100
 ###########################################################################
 while(True):
     # 读取数据
-    url = 'https://restapi.amap.com/v3/place/text?key=55a33f0144a6340f7c3df45fb1d7b9b0&keywords=地铁站&types=&city=320100&citylimit=true&children=1&offset=50&page=' + str(page_num) + '&extensions=all'
-    #url = 'https://restapi.amap.com/v3/place/text?key=55a33f0144a6340f7c3df45fb1d7b9b0&keywords=&types=150500&city=320115&citylimit=true&children=1&offset=100&page=' + str(page_num) + '&extensions=all'
+    url = 'https://restapi.amap.com/v3/place/text?key= &keywords=地铁站&types=&city=320100&citylimit=true&children=1&offset=50&page=' + str(page_num) + '&extensions=all'
     response = requests.get(url)
     dict = response.json()
 
